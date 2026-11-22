@@ -4,7 +4,7 @@
 
 :root {
   /* ── Core backgrounds ──────────────────── */
-  --background: #ffffff;
+  --background: #F9F3F0;
   --foreground: #242424;
 
   /* ── Brand colors (keep in sync with tailwind.config.ts) ── */
@@ -19,7 +19,7 @@
   --secondary-fg: #ffffff;
 
   /* ── Surface & section backgrounds ──────── */
-  --surface: #F7F7F7;
+  --surface: #F3EBE7;
   --dark-bg: #1F2124;
 
   /* ── Text colors ─────────────────────────── */
