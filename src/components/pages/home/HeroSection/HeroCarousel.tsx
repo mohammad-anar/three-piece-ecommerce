@@ -38,24 +38,24 @@ export default function HeroCarousel() {
 
   const hasMultipleSlides = slides.length > 1;
 
-  // Single clean banner mode (container width, aspect ratio 1672:941, no text overlay)
+  // Single clean banner mode (container width, max-height 820px, strict 1672:941 aspect ratio across mobile, tablet & laptop)
   if (!hasMultipleSlides) {
     const singleSlide = slides[0];
     const BannerContent = (
-      <div className="relative w-full aspect-[1672/941] bg-background-surface overflow-hidden">
+      <div className="relative w-full aspect-[1672/941] max-h-[820px] max-w-[calc(820px*1672/941)] mx-auto bg-background-surface overflow-hidden">
         <Image
           src={singleSlide.image}
           alt={singleSlide.alt}
           fill
           priority
-          sizes="(max-width: 1600px) 100vw, 1600px"
-          className="object-cover w-full h-full"
+          sizes="(max-width: 1600px) 100vw, 1460px"
+          className="object-contain w-full h-full"
         />
       </div>
     );
 
     return (
-      <section className="w-full bg-background py-4 md:py-6">
+      <section className="w-full bg-background py-3 md:py-5">
         <div className="container">
           {singleSlide.link ? (
             <Link href={singleSlide.link} className="block w-full">
@@ -71,7 +71,7 @@ export default function HeroCarousel() {
 
   // Multi-slide Carousel Mode (if additional banners are added)
   return (
-    <section className="w-full bg-background py-4 md:py-6">
+    <section className="w-full bg-background py-3 md:py-5">
       <div className="container relative">
         <Carousel
           setApi={setApi}
@@ -83,14 +83,14 @@ export default function HeroCarousel() {
             {slides.map((slide) => (
               <CarouselItem key={slide.id} className="pl-0">
                 <Link href={slide.link || "/shop"} className="block w-full">
-                  <div className="relative w-full aspect-[1672/941] bg-background-surface overflow-hidden">
+                  <div className="relative w-full aspect-[1672/941] max-h-[820px] max-w-[calc(820px*1672/941)] mx-auto bg-background-surface overflow-hidden">
                     <Image
                       src={slide.image}
                       alt={slide.alt}
                       fill
                       priority={slide.id === 1}
-                      sizes="(max-width: 1600px) 100vw, 1600px"
-                      className="object-cover w-full h-full"
+                      sizes="(max-width: 1600px) 100vw, 1460px"
+                      className="object-contain w-full h-full"
                     />
                   </div>
                 </Link>
