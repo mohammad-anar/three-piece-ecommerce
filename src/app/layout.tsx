@@ -10,17 +10,14 @@ import { ConfigProvider } from "antd";
 import "antd/dist/reset.css";
 
 const inter = Inter({
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
   subsets: ["latin"],
-  display: "swap",
   variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "ARC (Allied Restoration Contractors)",
+  title: "Zanass Clothing — Women's Ethnic Wear",
   description:
-    "Award Winning Service Allied Restoration Contractors, Repairs & Replacement",
+    "Shop premium women's ethnic wear, three-piece and two-piece sets online at Zanass.",
 };
 
 export default function RootLayout({
@@ -33,54 +30,52 @@ export default function RootLayout({
       <head></head>
       <body
         suppressHydrationWarning={true}
-        className={`${inter.variable} antialiased !bg-white`}
+        className={`${inter.variable} antialiased bg-background text-content`}
       >
         <NextUiProvider>
           <ReduxProvider>
             <ConfigProvider
               theme={{
                 token: {
-                  colorPrimary: "#0BA8CC",
-                  colorInfo: "#0BA8CC",
-                  colorSuccess: "#3ECF8E",
-                  colorWarning: "#FAAD14",
-                  colorError: "#FF6B6B",
+                  colorPrimary: "#7F3834",
+                  colorInfo: "#7F3834",
+                  colorSuccess: "#5CB85C",
+                  colorWarning: "#F0AD4E",
+                  colorError: "#D9534F",
 
-                  colorTextBase: "#1F1F1F",
+                  colorTextBase: "#242424",
                   colorBgBase: "#FFFFFF",
-                  borderRadius: 8,
+                  borderRadius: 2,
                   fontSize: 15,
                   lineHeight: 1.6,
                   controlHeight: 40,
                 },
                 components: {
                   Button: {
-                    colorPrimary: "#0BA8CC",
-                    colorPrimaryHover: "#0aa0bd",
-                    colorPrimaryActive: "#088aa3",
+                    colorPrimary: "#7F3834",
+                    colorPrimaryHover: "#6B2F2B",
+                    colorPrimaryActive: "#572522",
 
-                    colorSuccess: "#3ECF8E",
-                    colorSuccessHover: "#36b87d",
-                    colorSuccessActive: "#2fa36e",
+                    colorSuccess: "#5CB85C",
+                    colorSuccessHover: "#4CAF50",
+                    colorSuccessActive: "#388E3C",
 
-                    colorWarning: "#FAAD14",
-                    colorWarningHover: "#e89c0f",
-                    colorWarningActive: "#c27e0d",
+                    colorWarning: "#F0AD4E",
+                    colorWarningHover: "#E09B3D",
+                    colorWarningActive: "#D48806",
 
-                    colorError: "#FF6B6B",
-                    colorErrorHover: "#e95e5e",
-                    colorErrorActive: "#c94d4d",
+                    colorError: "#D9534F",
+                    colorErrorHover: "#C9423E",
+                    colorErrorActive: "#B5322E",
                   },
                 },
               }}
             >
-              <>
-                <div className="min-h-screen grid grid-rows-[auto_1fr_auto] text-title max-w-[100vw] overflow-hidden">
-                  {children}
-                </div>
-                <ScrollToTopButton />
-                <Toaster />
-              </>
+              <div className="min-h-screen text-content max-w-[100vw] overflow-x-hidden">
+                {children}
+              </div>
+              <ScrollToTopButton />
+              <Toaster />
             </ConfigProvider>
           </ReduxProvider>
         </NextUiProvider>
