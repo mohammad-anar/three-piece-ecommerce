@@ -3,15 +3,34 @@
 @tailwind utilities;
 
 :root {
+  /* ── Core backgrounds ──────────────────── */
   --background: #ffffff;
-  --foreground: #171717;
-}
+  --foreground: #242424;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #000;
-    --foreground: #e5e5e5;
-  }
+  /* ── Brand colors (keep in sync with tailwind.config.ts) ── */
+  --primary: #7F3834;
+  --primary-hover: #6B2F2B;
+  --primary-light: #F5EDEC;
+  --primary-fg: #ffffff;
+
+  --secondary: #54595F;
+  --secondary-hover: #3F444B;
+  --secondary-light: #F0F1F2;
+  --secondary-fg: #ffffff;
+
+  /* ── Surface & section backgrounds ──────── */
+  --surface: #F7F7F7;
+  --dark-bg: #1F2124;
+
+  /* ── Text colors ─────────────────────────── */
+  --content: #242424;
+  --content-body: #767676;
+  --content-muted: #838383;
+  --content-inverse: #ffffff;
+
+  /* ── Border ──────────────────────────────── */
+  --border: rgba(0, 0, 0, 0.1);
+  --border-strong: rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -52,4 +71,92 @@ input[type="number"] {
   100% {
     background-position: left;
   }
+}
+
+/* Custom Scrollbar Utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth 0.5s Sheet / Drawer Animations */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOutToLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes sheetFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sheetFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+[data-state="open"].sheet-content-right {
+  animation: slideInFromRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+[data-state="closed"].sheet-content-right {
+  animation: slideOutToRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+[data-state="open"].sheet-content-left {
+  animation: slideInFromLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+[data-state="closed"].sheet-content-left {
+  animation: slideOutToLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+[data-state="open"].sheet-overlay {
+  animation: sheetFadeIn 0.5s ease forwards;
+}
+
+[data-state="closed"].sheet-overlay {
+  animation: sheetFadeOut 0.4s ease forwards;
 }
