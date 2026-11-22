@@ -14,43 +14,58 @@ export default {
         inter: ["var(--font-inter)"],
       },
       colors: {
-        black: "#000",
-        title: "#121212",
-
-        // Match Ant Design tokens
+        // ── Brand Colors (zanass.com inspired) ──────────────────────────
+        // ✅ Change these values to retheme the entire website at once
         primary: {
-          DEFAULT: "#00B2D8", // Blue
-          dark: "#0092B3",
-          light: "#33C7E2",
+          DEFAULT: "#7F3834", // Main brand color — navbar, hero, footer, buttons
+          hover: "#6B2F2B",   // Darker shade for hover states
+          light: "#F5EDEC",   // Very light tint for subtle backgrounds
+          fg: "#FFFFFF",      // Foreground text on primary backgrounds
         },
         secondary: {
-          DEFAULT: "#2E2E2E", // Blue
-          dark: "#2E2E2E",
-          light: "#2E2E2E",
+          DEFAULT: "#54595F", // Secondary elements — footer bottom bar
+          hover: "#3F444B",   // Darker shade for hover states
+          light: "#F0F1F2",   // Light tint for backgrounds
+          fg: "#FFFFFF",      // Foreground text on secondary backgrounds
         },
+
+        // ── Semantic Backgrounds ─────────────────────────────────────────
+        background: {
+          DEFAULT: "#FFFFFF",   // Main page background
+          surface: "#F7F7F7",   // Card / alternate section background
+          dark: "#1F2124",      // Dark sections (e.g. footer bottom area)
+        },
+
+        // ── Semantic Text Colors ─────────────────────────────────────────
+        content: {
+          DEFAULT: "#242424",   // Primary heading / title text
+          body: "#767676",      // Body / paragraph text
+          muted: "#838383",     // Muted / placeholder / caption text
+          inverse: "#FFFFFF",   // Text on dark or primary backgrounds
+        },
+
+        // ── Border ───────────────────────────────────────────────────────
+        border: {
+          DEFAULT: "rgba(0,0,0,0.1)",
+          strong: "rgba(0,0,0,0.2)",
+        },
+
+        // ── State Colors ─────────────────────────────────────────────────
         success: {
-          DEFAULT: "#3ECF8E", // Green
-          dark: "#158562",
-          light: "#44C998",
+          DEFAULT: "#5CB85C",
+          dark: "#4CAF50",
+          light: "#E8F5E9",
         },
         warning: {
-          DEFAULT: "#FAAD14", // Orange/Yellow
+          DEFAULT: "#F0AD4E",
           dark: "#D48806",
-          light: "#FFD666",
+          light: "#FFF8E1",
         },
         danger: {
-          DEFAULT: "#FF6B6B", // Red
-          dark: "#D9363E",
-          light: "#FF7875",
+          DEFAULT: "#D9534F",
+          dark: "#C0392B",
+          light: "#FEECEC",
         },
-
-        tomato: "#FF6B6B",
-        "gray-light": "#f1f1f1",
-        "light-green": "#3ECF8E",
-        "light-orange": "#FFF4E9",
-
-        background: "var(--background)",
-        foreground: "var(--foreground)",
       },
       screens: {
         xs: "540px",
