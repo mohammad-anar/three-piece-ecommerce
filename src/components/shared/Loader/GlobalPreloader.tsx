@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles } from "lucide-react";
 
@@ -81,15 +82,22 @@ export default function GlobalPreloader() {
               />
             </motion.div>
 
-            {/* Brand Title with elegant tracking animation */}
-            <motion.h1
-              initial={{ opacity: 0, y: 15, letterSpacing: "0.2em" }}
-              animate={{ opacity: 1, y: 0, letterSpacing: "0.45em" }}
+            {/* Brand Logo with elegant reveal */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-3xl md:text-5xl font-extrabold uppercase text-background tracking-[0.45em] ml-2 font-serif"
+              className="my-2"
             >
-              ZANASS
-            </motion.h1>
+              <Image
+                src="/logo/logo.png"
+                alt="Zanass Logo"
+                width={200}
+                height={60}
+                priority
+                className="h-12 md:h-14 w-auto object-contain brightness-0 invert"
+              />
+            </motion.div>
 
             {/* Tagline */}
             <motion.p
