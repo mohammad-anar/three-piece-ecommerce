@@ -1,11 +1,17 @@
-import HeroSection from "@/components/pages/home/HeroSection/HeroSection";
+import HeroCarousel from "@/components/pages/home/HeroSection/HeroCarousel";
+import ProductTabs from "@/components/pages/home/ProductTabs/ProductTabs";
+import PromoBanners from "@/components/pages/home/PromoBanners/PromoBanners";
+import Testimonials from "@/components/pages/home/Testimonials/Testimonials";
+import FeatureStrip from "@/components/pages/home/FeatureStrip/FeatureStrip";
 
-const HompPage = () => {
+export default function HomePage() {
   return (
-    <>
-      <HeroSection />
-    </>
+    <div className="w-full overflow-hidden">
+      <HeroCarousel />
+      <ProductTabs />
+      <PromoBanners />
+      <Testimonials />
+      <FeatureStrip />
+    </div>
   );
-};
-
-export default HompPage;
+}
