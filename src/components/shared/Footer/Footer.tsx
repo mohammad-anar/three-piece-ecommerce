@@ -1,164 +1,175 @@
 "use client";
-import logo from "@/assets/logo/logo.png";
+
+import Link from "next/link";
 import {
   InstagramOutlined,
   MailOutlined,
   PhoneFilled,
 } from "@ant-design/icons";
-import Image from "next/image";
-import Link from "next/link";
 import {
   FaFacebook,
-  FaGithub,
-  FaLocationPinLock,
+  FaLocationDot,
   FaXTwitter,
+  FaYoutube,
 } from "react-icons/fa6";
 
-const thirdRow = [
-  {
-    title: "About Us",
-    link: "/about-us",
-  },
-  {
-    title: "Clinic List",
-    link: "/clinic-list",
-  },
-  {
-    title: "Service",
-    link: "/service",
-  },
-  {
-    title: "Subscription",
-    link: "/subscription",
-  },
-  {
-    title: "FAQ",
-    link: "/faq",
-  },
-  {
-    title: "Contact Us",
-    link: "/contact-us",
-  },
-  {
-    title: "Blogs",
-    link: "/blogs",
-  },
+const footerLinks = [
+  { title: "About Us", link: "/about-us" },
+  { title: "Shop All", link: "/shop" },
+  { title: "Three Piece Collection", link: "/collections/three-piece" },
+  { title: "Two Piece Collection", link: "/collections/two-piece" },
+  { title: "Size Guide", link: "/size-guide" },
+  { title: "Terms & Conditions", link: "/terms" },
+  { title: "Privacy Policy", link: "/privacy" },
+  { title: "FAQ", link: "/faq" },
+  { title: "Contact Us", link: "/contact-us" },
 ];
+
 const Footer = () => {
   return (
-    <div>
-      {/* top  */}
-      <div className="bg-primary py-20">
+    <footer className="w-full">
+      {/* Top Footer */}
+      <div className="bg-primary text-primary-fg py-16">
         <div className="container">
-          <div className=" grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-5">
-            {/* col 1 */}
-            <div className="flex flex-col gap-6">
-              <div className="h-24 w-72 ">
-                <Image
-                  src={logo}
-                  className="object-contain"
-                  height={400}
-                  width={400}
-                  alt="image"
-                />
-              </div>
-              <p className="text-gray-light text-lg font-semibold">
-                ClinicaDigitala
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+            {/* Col 1: Brand Info */}
+            <div className="flex flex-col gap-4">
+              <span className="text-3xl font-black tracking-widest uppercase">
+                Zanass
+              </span>
+              <p className="text-primary-fg/80 text-sm leading-relaxed">
+                Zanass Clothing — Bangladesh&apos;s leading online destination for premium women&apos;s ethnic wear, three-piece sets, and elegant designer clothing.
               </p>
-              <div className="flex flex-col gap-4">
-                {/* flex content */}
-                <div className="flex items-start gap-4 text-white">
-                  <div className="bg-white p-2 rounded-full text-white">
-                    <FaLocationPinLock className="text-primary" size={18} />
+              <div className="flex flex-col gap-3 mt-2 text-sm text-primary-fg/90">
+                <div className="flex items-start gap-3">
+                  <div className="bg-background text-primary p-2 rounded-full shrink-0">
+                    <FaLocationDot size={14} />
                   </div>
-                  <p className="mt-1">
-                    Calea București 251, Brașov 500299, Romania
-                  </p>
+                  <span className="mt-1">Dhaka, Bangladesh</span>
                 </div>
-                {/* flex content */}
-                <div className="flex items-start gap-4 text-white">
-                  <div className="bg-white p-2 rounded-full text-white">
-                    <PhoneFilled className="text-primary" size={18} />
+                <div className="flex items-start gap-3">
+                  <div className="bg-background text-primary p-2 rounded-full shrink-0">
+                    <PhoneFilled size={14} />
                   </div>
-                  <p className="mt-1">123-456-7890</p>
+                  <span className="mt-1">+880 1700-000000</span>
                 </div>
-                {/* flex content */}
-                <div className="flex items-start gap-4 text-white">
-                  <div className="bg-white p-2 rounded-full text-white">
-                    <MailOutlined className="text-primary" size={18} />
+                <div className="flex items-start gap-3">
+                  <div className="bg-background text-primary p-2 rounded-full shrink-0">
+                    <MailOutlined size={14} />
                   </div>
-                  <p className="mt-1">user@gmail.com</p>
+                  <span className="mt-1">support@zanass.com</span>
                 </div>
               </div>
             </div>
 
-            {/* col 2 */}
-            <div className="flex flex-col gap-6">
-              {thirdRow?.map((item, i) => (
-                <Link href={item?.link} key={i} className=" inline-block w-fit">
-                  <div className="cursor-pointer text-white hover:text-tomato ">
-                    {item?.title}
-                  </div>
-                </Link>
-              ))}
+            {/* Col 2: Quick Links */}
+            <div>
+              <h4 className="text-base font-bold uppercase tracking-wider mb-4 border-b border-primary-fg/20 pb-2">
+                Quick Links
+              </h4>
+              <ul className="flex flex-col gap-2.5 text-sm">
+                {footerLinks.slice(0, 5).map((item, i) => (
+                  <li key={i}>
+                    <Link
+                      href={item.link}
+                      className="text-primary-fg/80 hover:text-primary-fg transition-colors hover:underline"
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* col 3 */}
-            <div className="text-white">
-              <p className="text-md font-bold mb-6">Do you have a Clinic?</p>
-              <p className="text-md font-medium mb-6">Become a Partner</p>
-              {/* get is touch  */}
-              <div className="mt-16">
-                <p className="text-md font-normal mb-6">Follow Us</p>
+            {/* Col 3: Customer Care */}
+            <div>
+              <h4 className="text-base font-bold uppercase tracking-wider mb-4 border-b border-primary-fg/20 pb-2">
+                Customer Care
+              </h4>
+              <ul className="flex flex-col gap-2.5 text-sm">
+                {footerLinks.slice(5).map((item, i) => (
+                  <li key={i}>
+                    <Link
+                      href={item.link}
+                      className="text-primary-fg/80 hover:text-primary-fg transition-colors hover:underline"
+                    >
+                      {item.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-                <div className="flex items-center gap-5">
-                  <div className="bg-transparent hover:bg-secondary duration-300 p-2 rounded-full border border-white">
-                    <FaXTwitter className="text-white" size={18} />
-                  </div>
-                  <div className="bg-transparent hover:bg-secondary duration-300 p-2 rounded-full border border-white">
-                    <FaFacebook className="text-white" size={18} />
-                  </div>
-                  <div className="bg-transparent hover:bg-secondary duration-300 p-2 rounded-full border border-white">
-                    <InstagramOutlined className="text-white" size={18} />
-                  </div>
-                  <div className="bg-transparent hover:bg-secondary duration-300 p-2 rounded-full border border-white">
-                    <FaGithub className="text-white" size={18} />
-                  </div>
-                </div>
+            {/* Col 4: Newsletter & Social */}
+            <div className="flex flex-col gap-4">
+              <h4 className="text-base font-bold uppercase tracking-wider border-b border-primary-fg/20 pb-2">
+                Stay Connected
+              </h4>
+              <p className="text-primary-fg/80 text-sm">
+                Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.
+              </p>
+
+              <div className="flex items-center gap-3 mt-2">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-primary-hover p-2.5 rounded-full border border-primary-fg/30 text-primary-fg hover:bg-primary-fg hover:text-primary transition-colors"
+                  aria-label="Facebook"
+                >
+                  <FaFacebook size={16} />
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-primary-hover p-2.5 rounded-full border border-primary-fg/30 text-primary-fg hover:bg-primary-fg hover:text-primary transition-colors"
+                  aria-label="Instagram"
+                >
+                  <InstagramOutlined style={{ fontSize: "16px" }} />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-primary-hover p-2.5 rounded-full border border-primary-fg/30 text-primary-fg hover:bg-primary-fg hover:text-primary transition-colors"
+                  aria-label="Twitter"
+                >
+                  <FaXTwitter size={16} />
+                </a>
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="bg-primary-hover p-2.5 rounded-full border border-primary-fg/30 text-primary-fg hover:bg-primary-fg hover:text-primary transition-colors"
+                  aria-label="YouTube"
+                >
+                  <FaYoutube size={16} />
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* bottom  */}
-      <div className="bg-secondary py-5">
-        <div className="container flex flex-col md:flex-row items-center justify-between text-white">
-          <div>
-            <ul className="list-disc flex items-center gap-5 space-x-6 flex-wrap">
-              <li>
-                <Link href={"#"} className="hover:underline">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link href={"#"} className="hover:underline">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href={"#"} className="hover:underline">
-                  Cookies
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            © 2024 – 2029 Dariustodirascu Medical & Healthcare all rights
-            reserved.{" "}
+
+      {/* Bottom Bar */}
+      <div className="bg-secondary text-secondary-fg py-4 text-xs">
+        <div className="container flex flex-col md:flex-row items-center justify-between gap-3 text-secondary-fg/80">
+          <p>© {new Date().getFullYear()} Zanass Clothing. All rights reserved.</p>
+          <div className="flex items-center gap-6">
+            <Link href="/terms" className="hover:text-secondary-fg hover:underline">
+              Terms of Service
+            </Link>
+            <Link href="/privacy" className="hover:text-secondary-fg hover:underline">
+              Privacy Policy
+            </Link>
+            <Link href="/cookies" className="hover:text-secondary-fg hover:underline">
+              Cookies
+            </Link>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
