@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { Search, Heart, ShoppingBag, User } from "lucide-react";
 import NavMenu from "./NavMenu";
@@ -15,10 +16,15 @@ const ForPc = () => {
     <div className="w-full bg-background border-b border-border shadow-xs">
       <div className="container hidden lg:flex h-16 items-center justify-between">
         {/* Brand / Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-black tracking-widest text-primary uppercase">
-            Zanass
-          </span>
+        <Link href="/" className="flex items-center gap-2 py-1">
+          <Image
+            src="/logo/logo.png"
+            alt="Zanass Logo"
+            width={140}
+            height={42}
+            priority
+            className="h-9 w-auto object-contain"
+          />
         </Link>
 
         {/* Center NavMenu */}
