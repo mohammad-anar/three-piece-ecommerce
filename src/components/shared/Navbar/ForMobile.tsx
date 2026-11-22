@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, Search, ShoppingBag, Heart, User } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
@@ -32,8 +33,14 @@ const ForMobile = () => {
           </SheetTrigger>
           <SheetContent side="left" className="w-[300px] sm:w-[350px] p-6 bg-background">
             <SheetHeader className="mb-6 text-left">
-              <SheetTitle className="text-xl font-black tracking-widest text-primary uppercase">
-                Zanass
+              <SheetTitle className="p-0">
+                <Image
+                  src="/logo/logo.png"
+                  alt="Zanass Logo"
+                  width={130}
+                  height={38}
+                  className="h-8 w-auto object-contain"
+                />
               </SheetTitle>
             </SheetHeader>
 
@@ -87,10 +94,15 @@ const ForMobile = () => {
         </Sheet>
 
         {/* Brand name */}
-        <Link href="/">
-          <span className="text-xl font-black tracking-wider text-primary uppercase">
-            Zanass
-          </span>
+        <Link href="/" className="flex items-center py-1">
+          <Image
+            src="/logo/logo.png"
+            alt="Zanass Logo"
+            width={115}
+            height={34}
+            priority
+            className="h-7 w-auto object-contain"
+          />
         </Link>
       </div>
 
