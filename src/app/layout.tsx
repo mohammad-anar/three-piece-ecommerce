@@ -44,7 +44,7 @@ export default function RootLayout({
                   colorError: "#D9534F",
 
                   colorTextBase: "#242424",
-                  colorBgBase: "#FFFFFF",
+                  colorBgBase: "#F9F3F0",
                   borderRadius: 2,
                   fontSize: 15,
                   lineHeight: 1.6,
