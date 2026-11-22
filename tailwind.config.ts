@@ -31,8 +31,8 @@ export default {
 
         // ── Semantic Backgrounds ─────────────────────────────────────────
         background: {
-          DEFAULT: "#FFFFFF",   // Main page background
-          surface: "#F7F7F7",   // Card / alternate section background
+          DEFAULT: "#F9F3F0",   // Main page background (warm luxury linen tone)
+          surface: "#F3EBE7",   // Card / alternate section background
           dark: "#1F2124",      // Dark sections (e.g. footer bottom area)
         },
 
