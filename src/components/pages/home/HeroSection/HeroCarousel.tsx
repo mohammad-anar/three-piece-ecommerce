@@ -23,6 +23,12 @@ const slides: HeroSlide[] = [
     alt: "Tahzee New Ethnic Collection Banner",
     link: "/shop",
   },
+  {
+    id: 1,
+    image: "/hero/tahzee.jpg",
+    alt: "Tahzee New Ethnic Collection Banner",
+    link: "/shop",
+  },
 ];
 
 export default function HeroCarousel() {
