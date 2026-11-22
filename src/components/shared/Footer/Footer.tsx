@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import {
   InstagramOutlined,
@@ -34,9 +35,15 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Col 1: Brand Info */}
             <div className="flex flex-col gap-4">
-              <span className="text-3xl font-black tracking-widest uppercase">
-                Zanass
-              </span>
+              <Link href="/" className="inline-block py-1">
+                <Image
+                  src="/logo/logo.png"
+                  alt="Zanass Logo"
+                  width={150}
+                  height={45}
+                  className="h-10 w-auto object-contain brightness-0 invert"
+                />
+              </Link>
               <p className="text-primary-fg/80 text-sm leading-relaxed">
                 Zanass Clothing — Bangladesh&apos;s leading online destination for premium women&apos;s ethnic wear, three-piece sets, and elegant designer clothing.
               </p>
